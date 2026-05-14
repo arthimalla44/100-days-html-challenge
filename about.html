@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Animated About Page</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#020617;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* MAIN SECTION */
+
+    .about-section{
+      width:100%;
+      min-height:100vh;
+      position:relative;
+      overflow:hidden;
+      padding:100px 8%;
+      background:
+      linear-gradient(to right,#0f172a,#1e1b4b);
+    }
+
+    /* ANIMATED BACKGROUND */
+
+    .glow{
+      position:absolute;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      filter:blur(140px);
+      opacity:0.2;
+    }
+
+    .glow1{
+      background:#38bdf8;
+      top:-100px;
+      left:-100px;
+      animation:move1 8s infinite alternate;
+    }
+
+    .glow2{
+      background:#7c3aed;
+      bottom:-100px;
+      right:-100px;
+      animation:move2 10s infinite alternate;
+    }
+
+    @keyframes move1{
+
+      0%{
+        transform:translate(0,0);
+      }
+
+      100%{
+        transform:translate(80px,50px);
+      }
+    }
+
+    @keyframes move2{
+
+      0%{
+        transform:translate(0,0);
+      }
+
+      100%{
+        transform:translate(-80px,-40px);
+      }
+    }
+
+    /* FLOATING PARTICLES */
+
+    .particles span{
+      position:absolute;
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:#38bdf8;
+      box-shadow:0 0 15px #38bdf8;
+      animation:blink 2s infinite alternate;
+    }
+
+    @keyframes blink{
+
+      from{
+        opacity:0.2;
+      }
+
+      to{
+        opacity:1;
+      }
+    }
+
+    /* HEADING */
+
+    .title{
+      text-align:center;
+      margin-bottom:70px;
+      position:relative;
+      z-index:2;
+    }
+
+    .title h1{
+      font-size:70px;
+      color:#38bdf8;
+      text-shadow:0 0 20px #38bdf8;
+      margin-bottom:20px;
+    }
+
+    .title p{
+      font-size:22px;
+      color:#cbd5e1;
+    }
+
+    /* CARDS */
+
+    .cards{
+      width:100%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:35px;
+      position:relative;
+      z-index:2;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      border-radius:25px;
+      padding:35px;
+      transition:0.5s;
+      box-shadow:0 0 20px rgba(0,0,0,0.2);
+      animation:float 4s ease-in-out infinite;
+    }
+
+    .card:hover{
+      transform:translateY(-12px);
+      box-shadow:
+      0 0 25px #38bdf8,
+      0 0 60px #7c3aed;
+    }
+
+    .card h2{
+      color:#38bdf8;
+      margin-bottom:20px;
+      font-size:28px;
+    }
+
+    .card p{
+      color:#e2e8f0;
+      line-height:32px;
+      font-size:17px;
+    }
+
+    .card ul{
+      padding-left:20px;
+    }
+
+    .card ul li{
+      margin-bottom:15px;
+      color:#e2e8f0;
+      line-height:28px;
+    }
+
+    /* FLOAT ANIMATION */
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .title h1{
+        font-size:45px;
+      }
+
+      .title p{
+        font-size:18px;
+      }
+
+      .card{
+        padding:25px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <section class="about-section">
+
+    <!-- GLOW EFFECT -->
+
+    <div class="glow glow1"></div>
+    <div class="glow glow2"></div>
+
+    <!-- PARTICLES -->
+
+    <div class="particles">
+
+      <span style="top:10%;left:15%;"></span>
+      <span style="top:20%;left:70%;"></span>
+      <span style="top:35%;left:85%;"></span>
+      <span style="top:55%;left:40%;"></span>
+      <span style="top:70%;left:20%;"></span>
+      <span style="top:85%;left:60%;"></span>
+
+    </div>
+
+    <!-- TITLE -->
+
+    <div class="title">
+
+      <h1>About Me</h1>
+
+      <p>
+        Learn more about my education, hobbies, goals and creative journey.
+      </p>
+
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="cards">
+
+      <!-- CARD 1 -->
+
+      <div class="card">
+
+        <h2>Introduction</h2>
+
+        <p>
+          Hello! I'm Srilakshmi, a passionate Python Developer
+          and Web Designer. I enjoy building futuristic and
+          interactive websites using modern technologies.
+        </p>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="card">
+
+        <h2>Education</h2>
+
+        <p>
+          B.Tech Computer Science Engineering
+          <br><br>
+          Studying modern web technologies,
+           Python development.
+        </p>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="card">
+
+        <h2>Hobbies</h2>
+
+        <ul>
+
+          <li>✨ Coding & Learning</li>
+
+          <li>🎵 Listening Music</li>
+
+          <li>🤖 Exploring AI Tools</li>
+
+          <li>📚 Reading Tech Articles</li>
+
+        </ul>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="card">
+
+        <h2>Career Goal</h2>
+
+        <p>
+          My goal is to become a skilled software developer
+          and create innovative websites and applications
+          with beautiful user experiences.
+        </p>
+
+      </div>
+
+      <!-- CARD 5 -->
+
+      <div class="card">
+
+        <h2>My Vision</h2>
+
+        <p>
+          I want to continuously improve my programming
+          skills and build modern projects that inspire
+          creativity and innovation.
+        </p>
+
+      </div>
+
+     
+
+    </div>
+
+  </section>
+
+</body>
+</html>
